@@ -2,11 +2,11 @@
 
 ###### 团队内部协作
 
-<img src="C:\Users\ADMIN\Desktop\星愿浏览器截图20201030214457.png" style="zoom:50%;" />
+![](G:\Git\gitnote_cz\image\微信截图_20201101083347.png)
 
 ###### 团队外部协作
 
-<img src="C:\Users\ADMIN\Desktop\星愿浏览器截图20201030214608.png" style="zoom:50%;" />
+![](G:\Git\gitnote_cz\image\微信截图_20201101083431.png)
 
 ###### 基本概念：
 
@@ -33,18 +33,18 @@
 
 ##### 查看历史版本：
 
-​	git log 		git log --pretty=oneline		git log --oneline		git reflog
-回到9bea226 这个版本：git reset --hard 9bea226 	
-只能后退,后退1个版本：git reset --hard HEAD^		git reset --hard HEAD ~1
-​	reset  --soft：仅仅在本地哭移动head  
-​			   --mixed： 在本地库移动head，重置暂存区	
-​               --head：本地库移动head，重置暂存区和工作区 
+git log 		git log --pretty=oneline		git log --oneline		git reflog
+	回到9bea226 这个版本：git reset --hard 9bea226 	
+	只能后退,后退1个版本：git reset --hard HEAD^		git reset --hard HEAD ~1
+		reset  --soft：仅仅在本地哭移动head  
+				   --mixed： 在本地库移动head，重置暂存区	
+  	             --head：本地库移动head，重置暂存区和工作区 
 工作区修改文件和暂存区比较：git diff hello.php
 工作区和仓库上一个版本进行比较：git diff HEAD^ hello.php
 
 ##### Git初始化及仓库创建和操作
 
-###### 设置签名
+###### 	设置签名
 
 ​	签名的作用：是用来区分开发人员的标志，邮箱有没有都行
 ​	项目即便签名：仅当前本地库范围内有效，保存文件位置./.git/config
@@ -54,7 +54,7 @@
 ​		1.设置用户名：git config --global user.name 'a597229756a'
 ​		2.设置用户名邮箱：git config --global user.email '597229756@qq.com'
 
-###### 分支管理
+###### 	分支管理
 
 ![image-20201031005303775](C:\Users\ADMIN\AppData\Roaming\Typora\typora-user-images\image-20201031005303775.png)
 
@@ -64,49 +64,60 @@
 ​		合并分支：1.切换到被合并分之上。2.执行merge命令，git merge [分支名]。
 ​		冲突解决：1.修改冲突文件。2.git add [文件名]。3.git commit -m “描述”。
 
+##### Git分支管理机制
+
+###### 	分支的创建
+
+![image-20201101094053373](G:\Git\gitnote_cz\image\image-20201101094053373.png)
+
+##### Git文件管理原理
+
+###### 	git的提交对象
+
+![](G:\Git\gitnote_cz\image\微信截图_20201101093357.png)
+
+###### 	提交对象及父对象形成的链条
+
+![image-20201101093820769](G:\Git\gitnote_cz\image\image-20201101093820769.png)
+
 ##### Git管理远程仓库
 
-将远程仓库（github对应的项目）复制到本地
+​	在本地创建远程库地址别名
+​		查看别名：git remote -v 
+​		起别名：git remote add gitnote_cz  https://github.com/a597229756a/gitnote_cz.git
+​		推送：git push gitnote_cz master
+​				
 
-​	git clone https://github.com/a597229756a/gitnote_cz.git
-
-​	git push ：提交到远程仓库
+​	将远程仓库（github对应的项目）复制到本地
+​		git clone https://github.com/a597229756a/gitnote_cz.git
+​		git push ：提交到远程仓库
 
 ##### 解决git push错误
 
-the requested URL returned error: 403 Forbidden while accessing
-
-答案：似有项目，没有权限，输入用户名密码，或者远程地址采用这种类型：vi .git/config
-
-[remote "origin"]
-
-​	url = https://github.com/用户名/仓库名.git
-
-[remote "origin"]
-
-​	url = https://用户名:密码@github.com/用户名/仓库名.git
+​	the requested URL returned error: 403 Forbidden while accessing
+​	答案：似有项目，没有权限，输入用户名密码，或者远程地址采用这种类型：vi .git/config
+​	[remote "origin"]
+​		url = https://github.com/用户名/仓库名.git
+​	[remote "origin"]
+​		url = https://用户名:密码@github.com/用户名/仓库名.git
 
 ##### Github Pages搭建网站
 
 ###### 搭建步骤
 
-1.创建个人站点->创建仓库（仓库名必须是“用户名.github.io”)
-
-2.在仓库下新建index.html
-
-3.访问https://a597229756a.github.io/index.html
+​	1.创建个人站点->创建仓库（仓库名必须是“用户名.github.io”)
+​	2.在仓库下新建index.html
+​	3.访问https://a597229756a.github.io/index.html
 
 ##### Project Pages项目站点
 
-https://a597229756a.gitthub.io/仓库名
+​	https://a597229756a.gitthub.io/仓库名
 
 ###### 搭建步骤
 
-1.进入项目主页，点击settings
-
-2.在settings页面，点击lanuch automatic page generator(自动生成主题页面)
-
-3.新建站点基础信息设置，选择主题，生成网页
+​	1.进入项目主页，点击settings
+​	2.在settings页面，点击lanuch automatic page generator(自动生成主题页面)
+​	3.新建站点基础信息设置，选择主题，生成网页
 
 
 
